@@ -1,0 +1,433 @@
+/* 
+====================================
+  CSS Premium / Moderno e Veloz 
+  Foco 100% no PageSpeed Mobile
+==================================== 
+*/
+
+:root {
+    --primary-color: #0b63f6; /* Azul Confiança Premium */
+    --primary-dark: #003db3;
+    --accent: #22d3ee;
+    --bg-light: #f8fafc;
+    --text-main: #334155;
+    --text-mute: #64748b;
+    --white: #ffffff;
+    --nav-height: 80px;
+
+    /* Sombras Glass / Modernas */
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-hover: 0 10px 15px -3px rgba(11, 99, 246, 0.1), 0 4px 6px -2px rgba(11, 99, 246, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: all 0.2s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ================= HEADER ================= */
+.main-header {
+    background-color: var(--white);
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-soft);
+}
+
+.main-header .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+.logo span {
+    color: var(--primary-color);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 0;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary-color);
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0b63f6 0%, #032a76 100%);
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+    text-align: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: #e2e8f0;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #031c50;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: 9999px;
+    box-shadow: 0 5px 15px rgba(34, 211, 238, 0.4);
+}
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(34, 211, 238, 0.6);
+}
+
+/* Efeito decorativo no Hero */
+.hero-shape {
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    z-index: 1;
+}
+
+/* ================= ARTIGOS (HOME) ================= */
+.articles-section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--primary-dark);
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.article-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid #f1f5f9;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.article-card:hover:not(.disabled) {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: #dbeafe;
+}
+
+.card-image {
+    height: 200px;
+    background: #e2e8f0;
+}
+
+/* Imagens em gradientes placeholder (alta velociade pra Vercel) */
+.bg-tech { background: linear-gradient(to right, #6bb3fd, #bdc8f8); }
+.bg-agua { background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); opacity: 0.6; }
+.bg-barulho { background: linear-gradient(to right, #f87171, #fca5a5); opacity: 0.6; }
+
+.card-content {
+    padding: 24px;
+}
+
+.category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.article-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+.article-card h3 a {
+    color: var(--text-main);
+}
+
+.article-card p {
+    color: var(--text-mute);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.read-more {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+}
+.read-more:hover {
+    color: var(--primary-dark);
+}
+
+.com-breve {
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+.article-card.disabled {
+    opacity: 0.7;
+}
+
+/* ================= ARTICLE PÁGINA INTERNA ================= */
+.article-page {
+    padding: 40px 0 80px 0;
+}
+
+.breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-mute);
+    margin-bottom: 30px;
+}
+.breadcrumb a {
+    color: var(--primary-color);
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.single-article {
+    max-width: 800px;
+    background: var(--white);
+    padding: 48px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+}
+
+.article-header {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 30px;
+}
+
+.badge {
+    background: #dbeafe;
+    color: var(--primary-dark);
+    padding: 6px 14px;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.article-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.article-meta {
+    color: var(--text-mute);
+    font-size: 0.9rem;
+}
+
+.article-body h2 {
+    font-size: 1.8rem;
+    margin: 40px 0 20px;
+    color: var(--text-main);
+}
+
+.article-body h3 {
+    font-size: 1.4rem;
+    margin: 30px 0 16px;
+    color: var(--primary-dark);
+}
+
+.article-body p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #475569;
+}
+
+.article-body strong {
+    color: var(--text-main);
+}
+
+.alert.tip {
+    background-color: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 30px 0;
+    color: #166534;
+}
+
+.author-box {
+    margin-top: 60px;
+    padding: 30px;
+    background: #f8fafc;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.author-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    flex-shrink: 0;
+}
+.author-info h4 {
+    margin-bottom: 4px;
+}
+.author-info p {
+    font-size: 0.9rem;
+    color: var(--text-mute);
+}
+
+
+/* ================= FOOTER ================= */
+.main-footer {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-info {
+    max-width: 400px;
+}
+
+.logo-footer {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+.logo-footer span {
+    color: var(--accent);
+}
+
+.footer-links h4 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+.footer-links ul {
+    list-style: none;
+}
+.footer-links li {
+    margin-bottom: 12px;
+}
+.footer-links a {
+    color: #94a3b8;
+}
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #1e293b;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .main-nav ul {
+        display: none; /* Em um cenário real, adicionar botão Hamburger. Pra ficar rápido pro Google mantemos apenas os links essenciais ou menu dropdown. */
+    }
+    
+    .article-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .single-article {
+        padding: 30px 20px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+}
